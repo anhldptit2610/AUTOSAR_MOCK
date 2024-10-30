@@ -6,6 +6,9 @@
         "rte_humiditysensor.h": "c",
         "rte_types.h": "c",
         "iohwab_temperaturesensor.h": "c",
-        "std_types.h": "c"
+        "std_types.h": "c",
+        "swc_temperaturesensor.h": "c",
+        "swc_humiditysensor.h": "c",
+        "iohwab_humiditysensor.h": "c"
     }
 }
