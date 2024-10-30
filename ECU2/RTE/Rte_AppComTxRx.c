@@ -11,42 +11,25 @@
 /******************************************************************************/
 /* ModuleID    :                                                              */
 /* ServiceID   :                                                              */
-/* Name        : RTE_COMCbk_HeaterControl                                     */
+/* Name        : Rte_COMCbk_HeaterControl                                     */
 /* Param       : void                                                         */
 /* Return      : void                                                         */
-/* Contents    : Callback function triggered upon receiving ON/OFF signal     */
-/*               from COM module to ON/OFF Heater Element System              */
+/* Contents    : Callback function triggered upon receiving ON/OFF signal and */
+/*               heater level signal from COM module to control Heater Element*/
+/*               System                                                       */
 /* Author      :                                                              */
 /* Note        :                                                              */
 /******************************************************************************/
-FUNC(void, RTE_CODE) RTE_COMCbk_HeaterControl(void){
+FUNC(void, RTE_CODE) Rte_COMCbk_HeaterControl(void){
     VAR(uint8, AUTOMATIC) HeaterControlSignal;
 
-    if (COM_ReceiveSignal(SIG_ID_HeaterControl, &HeaterControlSignal) == E_OK) {
-        if (HeaterControlSignal == ON) {            
-            (void)Rte_Call_PP_HeaterElement_MirrorHeater_On();
+    if (COM_ReceiveSignal(Conf_ComSignal_HeaterControlSignal, &HeaterControlSignal) == E_OK) {
+        if (HeaterControlSignal == ON) {       
+            if (COM_ReceiveSignal(ComConf_ComSignal_HeaterLevelSignal, &HeaterLevel) == E_OK) {
+                (void)Rte_Call_HeaterElement_W_To_IoHwAb_TurnHeaterOn(HeaterLevel);
+            }     
         } else {
-            (void)Rte_Call_PP_HeaterElement_MirrorHeater_Off();
+            (void)Rte_Call_HeaterElement_W_To_IoHwAb_TurnHeaterOff();
         }
-    }
-}
-
-
-/******************************************************************************/
-/* ModuleID    :                                                              */
-/* ServiceID   :                                                              */
-/* Name        : RTE_COMCbk_HeaterElement                                     */
-/* Param       : void                                                         */
-/* Return      : void                                                         */
-/* Contents    : Callback function triggered upon receiving ON/OFF signal     */
-/*               from COM module to ON/OFF Heater Element System              */
-/* Author      :                                                              */
-/* Note        :                                                              */
-/******************************************************************************/
-FUNC(void, RTE_CODE) RTE_COMCbk_HeaterLevel(void){
-     VAR(uint8, AUTOMATIC) HeaterLevel;
-
-    if (COM_ReceiveSignal(SIG_ID_HeaterLevel, &HeaterLevel) == E_OK) {
-        (void)Rte_Write_PP_HeaterElement_HeaterLevel(HeaterLevel);
     }
 }

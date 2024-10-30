@@ -32,30 +32,57 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_HumidData_ReceiveHumidity( P2VAR(AUTO
 }
 
 /******************************************************************************/
-/* Name        : Rte_Write_PP_PositionCommand_SendCommand                     */
-/* Param       : VAR: Command to Motor Control SWC                            */
+/* Name        : Rte_Write_PP_MHControl_HeaterControlSignal                   */
+/* Param       : VAR: Control signal to Heater Element SWC                    */
 /* Return      :                                                              */
-/* Contents    : Send Command to Motor Control SWC                            */
+/* Contents    : Send Control signal to Heater Element SWC                    */
 /* Note        :                                                              */
 /******************************************************************************/
-FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_MirrorHeaterCommand_SendCommand( VAR(AUTOSAR_uint8, AUTOMATIC) command ) {
+FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_MHControl_HeaterControlSignal(VAR(AUTOSAR_uint8, AUTOMATIC) control) {
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
     VAR(Std_ReturnType, AUTOMATIC) ret;
-    VAR(AUTOSAR_uint8, AUTOMATIC) tmp_data = command;
+    VAR(Std_ReturnType, AUTOMATIC) tmp_data = control;
 
-    ret = Com_SendSignal( ComConf_ComSignal_CommandSignal, &tmp_data );
-    switch( ret ) {
-    case COM_SERVICE_NOT_AVAILABLE:
-        ret_val = RTE_E_COM_STOPPED;
-        break;
-    case COM_BUSY:
-        ret_val = RTE_E_COM_BUSY;
-        break;
-    default:
-        /* nothing */
-        break;
+    ret = Com_SendSignal(ComConf_ComSignal_HeaterControlSignal, &tmp_data);
+    switch(ret) {
+        case COM_SERVICE_NOT_AVAILABLE:
+            ret_val = RTE_E_COM_STOPPED;
+            break;
+        case COM_BUSY:
+            ret_val = RTE_E_COM_BUSY;
+            break;
+        default:
+            /* nothing */
+            break;
     }
+    return ret_val;
+}
 
+
+/******************************************************************************/
+/* Name        : Rte_Write_PP_MHControl_HeaterLevel                           */
+/* Param       : VAR: Heater_Level Signal to Heater Element SWC               */
+/* Return      :                                                              */
+/* Contents    : Send Heater_Level Signal to Heater Element SWC               */
+/* Note        :                                                              */
+/******************************************************************************/
+FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_MHControl_HeaterLevel(VAR(AUTOSAR_uint8, AUTOMATIC) level) {
+    VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
+    VAR(Std_ReturnType, AUTOMATIC) ret;
+    VAR(Std_ReturnType, AUTOMATIC) tmp_data = level;
+
+    ret = Com_SendSignal(ComConf_ComSignal_HeaterLevelSignal, &tmp_data);
+    switch(ret) {
+        case COM_SERVICE_NOT_AVAILABLE:
+            ret_val = RTE_E_COM_STOPPED;
+            break;
+        case COM_BUSY:
+            ret_val = RTE_E_COM_BUSY;
+            break;
+        default:
+            /* nothing */
+            break;
+    }
     return ret_val;
 }
 
