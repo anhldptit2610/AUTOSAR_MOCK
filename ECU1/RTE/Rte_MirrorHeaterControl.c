@@ -88,13 +88,13 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_MHControl_HeaterLevel(VAR(AUTOSAR_ui
 
 
 /******************************************************************************/
-/* Name        : Rte_Call_RP_MemorySeat_NvM_ReadCurrentPosition               */
+/* Name        : Rte_Call_MHCPP_NvM_ReadTmpHumidValue                        */
 /* Param       : P2VAR: Pointer to the RAM data block                         */
 /* Return      :                                                              */
-/* Contents    : Read current position data from NV memory                    */
-/* Note        :                                                              */
-/******************************************************************************/
-FUNC(Std_ReturnType, RTE_CODE) Rte_Call_RP_NvM_ReadTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr ) {
+/* Contents    : Read default temp&humid trigger data from NvM Block           */
+/* Note        : Port belongs to MirrorHeaterControl SWCs                      */
+/*************************************************************************** ***/
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCRP_NvM_ReadTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr ) {
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
     NvM_ReadBlock(NvMBlock04, (uint16*)NvM_DstPtr)
@@ -102,16 +102,16 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_RP_NvM_ReadTmpHumidValue( P2VAR(AUTOSAR_
 }
 
 /******************************************************************************/
-/* Name        : Rte_Call_RP_MemorySeat_NvM_ReadCurrentPosition               */
+/* Name        : Rte_Call_MHCPP_NvM_WriteTmpHumidValue                        */
 /* Param       : P2VAR: Pointer to the RAM data block                         */
 /* Return      :                                                              */
-/* Contents    : Read current position data from NV memory                    */
-/* Note        :                                                              */
+/* Contents    : Write default temp&humid value to NvM Block to store trigger system data that depends on season*/
+/* Note        : Port belongs to MirrorHeaterControl SWCs                     */
 /******************************************************************************/
-FUNC(Std_ReturnType, RTE_CODE) Rte_Call_PP_NvM_WriteTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr ) {
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCPP_NvM_WriteTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr ) {
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_ReadBlock(NvMBlock04, (uint16*)NvM_SrcPtr)
+    NvM_WriteBlock(NvMBlock04, (uint16*)NvM_SrcPtr);
     return ret_val;
 }
 

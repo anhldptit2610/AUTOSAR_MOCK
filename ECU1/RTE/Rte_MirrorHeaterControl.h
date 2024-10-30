@@ -22,11 +22,11 @@ extern FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_MHControl_HeaterControlSignal
 extern FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_MHControl_HeaterLevel(VAR(AUTOSAR_uint8, AUTOMATIC) level);
 #define Rte_Write_HeaterLevel              Rte_Write_PP_MHControl_HeaterLevel
 
-extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_RP_NvM_ReadTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr );
-#define Rte_Call_NvM_ReadTmpHumidValue     Rte_Call_RP_NvM_ReadTmpHumidValue
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCRP_NvM_ReadTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr );
+#define Rte_Call_NvM_ReadTmpHumidValue    Rte_Call_MHCRP_NvM_ReadTmpHumidValue
 
-extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_PP_NvM_WriteTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr );
-#define Rte_Call_NvM_WriteTmpHumidValue    Rte_Call_RP_NvM_WriteTmpHumidValue
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCPP_NvM_WriteTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr );
+#define Rte_Call_NvM_WriteTmpHumidValue    Rte_Call_MHCPP_NvM_WriteTmpHumidValue
 
 
 /*----------------------------------------------------------------------------*/
