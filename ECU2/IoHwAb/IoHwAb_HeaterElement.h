@@ -5,7 +5,13 @@
 #include "Compiler_Cfg.h"
 #include "Compiler.h"
 
-extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_HeaterElementIO_TurnHeaterOn(VAR(TempSensor_IdType, AUTOMATIC), VAR(HeaterLevel, AUTOMATIC));
-extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_HeaterElementIO_TurnHeaterOff(VAR(TempSensor_IdType, AUTOMATIC));
+typedef enum {
+    HEATER_LEVEL_LOW,
+    HEATER_LEVEL_MEDIUM,
+    HEATER_LEVEL_HIGH,
+} HeaterLevel;
+
+extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_HeaterElementIO_TurnHeaterOn(VAR(HeaterLevel, AUTOMATIC));
+extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_HeaterElementIO_TurnHeaterOff(VAR(void, AUTOMATIC));
 
 #endif
