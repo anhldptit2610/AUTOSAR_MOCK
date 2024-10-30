@@ -11,7 +11,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HumiSensorIO_GetData(VAR(HumiSensor, AUT
     return ret;
 }
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_HumiData_TempData(VAR(AUTOSAR_uint16, AUTOMATIC) data)
+FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_HumiData_HumiData(VAR(AUTOSAR_uint16, AUTOMATIC) data)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = RTE_E_OK;
 
@@ -19,7 +19,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_HumiData_TempData(VAR(AUTOSAR_uint16
     return ret;
 }
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_HumiData_TempData(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) data)
+FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_HumiData_HumiData(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) data)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = RTE_E_OK;
 

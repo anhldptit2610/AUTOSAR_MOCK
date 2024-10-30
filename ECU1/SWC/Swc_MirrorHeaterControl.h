@@ -5,7 +5,11 @@
 extern "C" {
 #endif
 
+#include "Swc_TemperatureSensor.h"
+#include "Swc_HumiditySensor.h"
+#include "Rte_MirrorHeaterControl.h"
 
+extern FUNC(Std_ReturnType, RTE_CODE) MirrorHeaterControl(VAR(void, AUTOMATIC));
 
 #ifdef __cplusplus
 }
