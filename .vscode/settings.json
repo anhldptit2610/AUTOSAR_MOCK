@@ -10,6 +10,8 @@
         "swc_temperaturesensor.h": "c",
         "swc_humiditysensor.h": "c",
         "iohwab_humiditysensor.h": "c",
-        "iohwab_heaterelement.h": "c"
+        "iohwab_heaterelement.h": "c",
+        "swc_mirrorheatercontrol.h": "c",
+        "rte_mirrorheatercontrol.h": "c"
     }
 }
