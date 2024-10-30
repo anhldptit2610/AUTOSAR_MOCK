@@ -8,7 +8,7 @@ typedef enum {
 
 #define IN_RANGE(x, a, b)       ((x) >= (a) && (x) <= (b))
 
-FUNC(Std_ReturnType, RTE_CODE) MirrorHeaterControl(VAR(void, AUTOMATIC))
+FUNC(Std_ReturnType, ControlMirrorHeater_CODE) MirrorHeaterControl(VAR(void, AUTOMATIC))
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // TODO: choose right memory location

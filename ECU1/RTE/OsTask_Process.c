@@ -10,7 +10,7 @@
 /* task impliment                                                             */
 /*----------------------------------------------------------------------------*/
 
-extern FUNC(void, RTE_CODE) Rte_PeriodicProcess(VAR(void, AUTOMATIC));
+extern FUNC(void, RTE_CODE) Rte_MirrorHeaterControl(VAR(void, AUTOMATIC));
 /******************************************************************************/ 
 /* Name        : Task_Process                                                 */ 
 /* Param       :                                                              */ 
@@ -23,13 +23,13 @@ TASK (OsTask_Process)
 
     while(1)
     {
-        (void) WaitEvent(Periodic_Event);
+        (void) WaitEvent(Periodic_Event_1s);
         (void) GetEvent(OsTask_Process, &ev);
-        (void) ClearEvent(ev & Periodic_Event);
+        (void) ClearEvent(ev & Periodic_Event_1s);
 
-        if ((ev & Periodic_Event) != (EventMaskType)0)
+        if ((ev & Periodic_Event_1s) != (EventMaskType)0)
         {
-            Rte_PeriodicProcess();
+            Rte_MirrorHeaterControl();
         }
     }
 }

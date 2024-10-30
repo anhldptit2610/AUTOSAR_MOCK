@@ -12,7 +12,7 @@
 
 extern FUNC(void, RTE_CODE) Rte_HandleHeaterControl(VAR(void, AUTOMATIC));
 /******************************************************************************/ 
-/* Name        : Task_Control_Heater                                                */ 
+/* Name        : Task_Control_Heater                                          */ 
 /* Param       :                                                              */ 
 /* Return      :                                                              */ 
 /* Note        : Task triggered by data receive event                         */ 
