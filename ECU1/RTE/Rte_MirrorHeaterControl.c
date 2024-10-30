@@ -116,8 +116,8 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCPP_NvM_WriteTmpHumidValue( P2VAR(AUTO
 }
 
 
-extern FUNC(void, ControlMirrorHeater_CODE) ControlMirrorHeater( VAR(void, AUTOMATIC) );
+extern FUNC(void, ControlMirrorHeater_CODE) MirrorHeaterControl( VAR(void, AUTOMATIC) );
 
-FUNC(void, RTE_CODE) Rte_ControlMirrorHeater(VAR(void, AUTOMATIC)){
-    ControlMirrorHeater();
+FUNC(void, RTE_CODE) Rte_MirrorHeaterControl(VAR(void, AUTOMATIC)){
+    MirrorHeaterControl();
 }

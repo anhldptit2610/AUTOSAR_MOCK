@@ -25,6 +25,8 @@ typedef uint8 Std_ReturnType;
 /* AUTOSAR Defines */
 #define TRUE      			1U
 #define FALSE     			0U
+#define ON       			1U
+#define OFF     			0U
 #define E_NOT_OK    		1U
 #define E_OK      			0U
 #define STD_HIGH    		1U

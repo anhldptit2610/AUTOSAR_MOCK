@@ -2,6 +2,7 @@
 #define COM_H
 
 #include "Std_Types.h"
+#include "Compiler.h"
 
 /* Define các signal ID được sử dụng */
 #define ComConf_ComSignal_HeaterControlSignal  0x01
