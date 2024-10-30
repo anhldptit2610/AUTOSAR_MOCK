@@ -15,6 +15,9 @@ typedef enum {
     HUMI_SENSOR_HTU21D,
 } HumidSensor;
 
+
+#define HUMI_SENSOR_ID                      HUMI_SENSOR_HDC1080
+
 extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_HumiSensor_ReadData(VAR(TempSensor, AUTOMATIC) , P2VAR(AUTOSAR_uint16, AUTOMATIC));
 
 #ifdef __cplusplus
