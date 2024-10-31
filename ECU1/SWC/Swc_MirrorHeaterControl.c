@@ -10,6 +10,7 @@ typedef enum {
 
 FUNC(Std_ReturnType, ControlMirrorHeater_CODE) MirrorHeaterControl(VAR(void, AUTOMATIC))
 {
+    Rte_Call_WdgMCheckpointReached(SE3_ID,CP_ID_3)
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     P2VAR(AUTOSAR_uint8, AUTOMATIC, RTE_APPL_DATA) tempData, humiData;
 
@@ -27,6 +28,6 @@ FUNC(Std_ReturnType, ControlMirrorHeater_CODE) MirrorHeaterControl(VAR(void, AUT
     } else {                                                                    // no rain
         Rte_Write_PP_MHControl_HeaterControlSignal(OFF);
     }
-
+    Rte_Call_WdgMCheckpointReached(SE1_ID,CP_ID_4)
     return ret;
 }

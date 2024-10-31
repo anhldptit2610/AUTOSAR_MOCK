@@ -17,5 +17,6 @@ FUNC(Std_ReturnType, RTE_CODE) ReadHumidityAndSendData(VAR(void, AUTOMATIC))
 
     Rte_Read_RP_HumiData_HumiData(humiData);
     Rte_Write_PP_HumiData_HumiData(*humiData);
+    Rte_Call_WdgMCheckpointReached(SE2_ID, CP_ID_2);
     return ret;
 }
