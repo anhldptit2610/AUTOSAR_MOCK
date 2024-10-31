@@ -10,7 +10,7 @@
 /* task impliment                                                             */
 /*----------------------------------------------------------------------------*/
 
-extern FUNC(void, RTE_CODE) Rte_HandleHeaterControl(VAR(void, AUTOMATIC));
+extern FUNC(void, RTE_CODE) Rte_HeaterElement( VAR(void, AUTOMATIC) );
 /******************************************************************************/ 
 /* Name        : Task_Control_Heater                                          */ 
 /* Param       :                                                              */ 
@@ -19,19 +19,10 @@ extern FUNC(void, RTE_CODE) Rte_HandleHeaterControl(VAR(void, AUTOMATIC));
 /******************************************************************************/ 
 TASK (OsTask_Control_Heater)
 {
-    VAR(EventMaskType, AUTOMATIC) ev;
+    (void) WaitEvent(Data_Receive_Event);
+    (void) ClearEvent(Data_Receive_Event);
 
-    while(1)
-    {
-        (void) WaitEvent(Data_Receive_Event);
-        (void) GetEvent(OsTask_Control_Heater, &ev);
-        (void) ClearEvent(ev & Data_Receive_Event);
-
-        if ((ev & Data_Receive_Event) != (EventMaskType)0)
-        {
-            Rte_HandleHeaterControl();
-        }
-    }
+    Rte_HeaterElement();
 }
 
 /* End of OsTask_Control_Heater.c */

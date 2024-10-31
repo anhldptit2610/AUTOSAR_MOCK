@@ -12,6 +12,7 @@ extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HeaterElement_W_To_IoHwAb_TurnHea
 extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HeaterElement_W_To_IoHwAb_TurnHeaterOff(VAR(void, AUTOMATIC));
 extern FUNC(Std_ReturnTyRe, RTE_CODE) Rte_Read_RP_MHControl_HeaterControlSignal(P2VAR(AUTOSAR_uint8, AUTOMATIC, RTE_APPL_DATA));
 extern FUNC(Std_ReturnTyRe, RTE_CODE) Rte_Read_RP_MHControl_HeaterLevel(P2VAR(AUTOSAR_uint8, AUTOMATIC, RTE_APPL_DATA));
+extern FUNC(void, RTE_CODE) Rte_HeaterElement( VAR(void, AUTOMATIC) )
 #ifdef __cplusplus
 }
 #endif
