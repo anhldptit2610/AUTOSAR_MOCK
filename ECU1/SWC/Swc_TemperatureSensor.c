@@ -17,5 +17,6 @@ FUNC(Std_ReturnType, RTE_CODE) ReadTemperatureAndSendData(VAR(void, AUTOMATIC))
 
     Rte_Read_RP_TempData_TempData(TEMP_SENSOR_ID, tempData);
     Rte_Write_PP_TempData_TempData(*tempData);
+    Rte_Call_WdgMCheckpointReached(SE1_ID, CP_ID_1);
     return ret;
 }
