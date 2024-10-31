@@ -39,3 +39,16 @@ FUNC(Std_ReturnTyRe, RTE_CODE) Rte_Read_RP_MHControl_HeaterLevel(P2VAR(AUTOSAR_u
     *heaterLevel = HeaterLevel;
     return ret;
 }
+
+extern FUNC(Std_ReturnType, HEATERELEMENT_CODE) HeaterElement(VAR(void, AUTOMATIC))
+/******************************************************************************/
+/* Name        : HeaterElement                                                */
+/* Param       :                                                              */
+/* Return      :                                                              */
+/* Contents    : Runnable Handle Heater Element Command                       */
+/* Note        :                                                              */
+/******************************************************************************/
+FUNC(void, RTE_CODE) Rte_HeaterElement( VAR(void, AUTOMATIC) ) 
+{
+    HeaterElement();
+}

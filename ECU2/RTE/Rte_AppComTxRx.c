@@ -23,14 +23,12 @@ extern VAR(HeaterLevel, AUTOMATIC) HeaterLevel;
 /* Author      :                                                              */
 /* Note        :                                                              */
 /******************************************************************************/
-FUNC(void, RTE_CODE) Rte_COMCbk_HeaterControl(void){
+FUNC(void, RTE_CODE) Rte_COMCbk_HeaterControlSignal(void){
     if (COM_ReceiveSignal(Conf_ComSignal_HeaterControlSignal, &HeaterControlSignal) == E_OK) {
         if (HeaterControlSignal == ON) {       
-            if (COM_ReceiveSignal(ComConf_ComSignal_HeaterLevelSignal, &HeaterLevel) == E_OK) {
-                (void)Rte_Call_HeaterElement_W_To_IoHwAb_TurnHeaterOn(HeaterLevel);
-            }     
-        } else {
-            (void)Rte_Call_HeaterElement_W_To_IoHwAb_TurnHeaterOff();
+            COM_ReceiveSignal(ComConf_ComSignal_HeaterLevelSignal, &HeaterLevel);       
         }
+        /* Kích hoạt sự kiện cho Task xử lý ở application layer */
+        SetEvent(OsTask_Control_Heater, Data_Receive_Event); 
     }
 }
