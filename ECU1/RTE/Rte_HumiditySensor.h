@@ -14,6 +14,12 @@ extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HumiSensorIO_GetData(VAR(HumiSens
 extern FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_HumiData_HumiData(VAR(AUTOSAR_uint16, AUTOMATIC));
 extern FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_HumiData_HumiData(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA));
 
+/*NvM Code for Humidity Sensor */
+
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HMRP_NvM_ReadHumidSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr );
+
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HMPP_NvM_WriteHumidSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr );
+
 #ifdef __cplusplus
 }
 #endif
