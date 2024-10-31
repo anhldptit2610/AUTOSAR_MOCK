@@ -21,11 +21,3 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_TempData_TempData(VAR(AUTOSAR_uint16
     return ret;
 }
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_TempData_TempData(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) data)
-{
-    VAR(Std_ReturnType, AUTOMATIC) ret = RTE_E_OK;
-
-    Rte_Call_TempSensorIO_GetData(TEMP_SENSOR_ID, data);
-    return ret;
-}
-
