@@ -1,7 +1,10 @@
 #include "OS.h"
 #include "Rte_HumiditySensor.h"
 
-extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_HumiSensor_ReadData(VAR(TempSensor_IdType, AUTOMATIC) id);
+
+VAR(AUTOSAR_uint8, AUTOMATIC) HumidSensorData;
+
+extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_HumiSensor_ReadData(VAR(HumidSensor, AUTOMATIC) id);
 
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HumiSensorIO_GetData(VAR(HumiSensor, AUTOMATIC) id, P2VAR(AUTOSAR_uint8, AUTOMATIC, RTE_APPL_DATA) data)
 {
@@ -15,7 +18,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_HumiData_HumiData(VAR(AUTOSAR_uint16
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = RTE_E_OK;
 
-    Rte_HumiData = data;
+    HumidSensorData = data;
     return ret;
 }
 
