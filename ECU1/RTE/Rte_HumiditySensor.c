@@ -21,11 +21,3 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_HumiData_HumiData(VAR(AUTOSAR_uint16
     HumidSensorData = data;
     return ret;
 }
-
-FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_HumiData_HumiData(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) data)
-{
-    VAR(Std_ReturnType, AUTOMATIC) ret = RTE_E_OK;
-
-    Rte_Call_HumiSensorIO_GetData(HUMI_SENSOR_ID, data);
-    return ret;
-}

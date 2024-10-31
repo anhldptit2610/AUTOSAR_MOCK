@@ -26,7 +26,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_TempData_ReceiveTemperature( P2VAR(AU
 /******************************************************************************/
 FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_HumidData_ReceiveHumidity( P2VAR(AUTOSAR_uint8, AUTOMATIC, RTE_APPL_DATA) humidData ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
-    *humidData =ensorData;
+    *humidData = HumidSensorData;
 
     return ret_val;
 }
