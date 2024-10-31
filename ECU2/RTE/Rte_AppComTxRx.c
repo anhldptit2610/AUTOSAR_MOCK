@@ -2,6 +2,9 @@
 #include "Com.h"
 #include "Rte_AppComTxRx.h"
 
+extern VAR(AUTOSAR_uint8, AUTOMATIC) HeaterControlSignal;
+extern VAR(HeaterLevel, AUTOMATIC) HeaterLevel;
+
 /* AUTOSAR Version Check : Com */
 #if ( ( COM_AR_RELEASE_MINOR_VERSION != RTE_AR_RELEASE_MINOR_VERSION )\
 || ( COM_AR_RELEASE_MAJOR_VERSION != RTE_AR_RELEASE_MAJOR_VERSION ) )
@@ -21,8 +24,6 @@
 /* Note        :                                                              */
 /******************************************************************************/
 FUNC(void, RTE_CODE) Rte_COMCbk_HeaterControl(void){
-    VAR(uint8, AUTOMATIC) HeaterControlSignal;
-
     if (COM_ReceiveSignal(Conf_ComSignal_HeaterControlSignal, &HeaterControlSignal) == E_OK) {
         if (HeaterControlSignal == ON) {       
             if (COM_ReceiveSignal(ComConf_ComSignal_HeaterLevelSignal, &HeaterLevel) == E_OK) {
