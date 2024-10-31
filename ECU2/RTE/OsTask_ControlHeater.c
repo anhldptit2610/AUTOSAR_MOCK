@@ -5,6 +5,7 @@
 #include "Std_Type.h"
 #include "Com.h"
 #include "Os.h"
+#include "Os_Cfg.h"
 
 /*----------------------------------------------------------------------------*/
 /* task impliment                                                             */
