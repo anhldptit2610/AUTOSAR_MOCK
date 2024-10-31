@@ -11,11 +11,10 @@ typedef enum {
 FUNC(Std_ReturnType, ControlMirrorHeater_CODE) MirrorHeaterControl(VAR(void, AUTOMATIC))
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
-    // TODO: choose right memory location
     P2VAR(AUTOSAR_uint8, AUTOMATIC, RTE_APPL_DATA) tempData, humiData;
-    FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_TempData_ReceiveTemperature(tempData);
-    FUNC(Std_ReturnType, RTE_CODE) Rte_Read_RP_HumidData_ReceiveHumidity(humiData);
 
+    Rte_Read_RP_TempData_ReceiveTemperature(tempData);
+    Rte_Read_RP_HumidData_ReceiveHumidity(humiData);
     if (IN_RANGE(tempData, 30, 32) && IN_RANGE(humiData, 80, 84)) {             // very small rain
         Rte_Write_PP_MHControl_HeaterControlSignal(ON);
         Rte_Write_PP_MHControl_HeaterLevel(HEATER_LEVEL_LOW);

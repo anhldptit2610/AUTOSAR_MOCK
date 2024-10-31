@@ -11,7 +11,8 @@
 #define RTE_E_LIMIT				((Std_ReturnType) 130)
 #define RTE_E_NO_DATA			((Std_ReturnType) 131)
 #define RTE_E_TRANSMIT_ACK		((Std_ReturnType) 132)
-// Overlayd errors
+
+// Overlay errors
 #define RTE_E_LOST_DATA			((Std_ReturnType) 64)
 #define RTE_E_MAX_AGE_EXCEEDED	((Std_ReturnType) 64)
 

@@ -1,27 +1,27 @@
 #include "IoHwAb_HumiditySensor.h"
 
-FUNC(Std_ReturnType, AUTOMATIC) Dht22_Read_Data(VAR(AUTOSAR_uint16, AUTOMATIC) humiData)
+FUNC(Std_ReturnType, AUTOMATIC) Dht22_Read_Data(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) humiData)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // do something, send data to humiData
     return ret;
 }
 
-FUNC(Std_ReturnType, AUTOMATIC) Hdc1080_Read_Data(VAR(AUTOSAR_uint16, AUTOMATIC) humiData)
+FUNC(Std_ReturnType, AUTOMATIC) Hdc1080_Read_Data(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) humiData)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // do something, send data to humiData
     return ret;
 }
 
-FUNC(Std_ReturnType, AUTOMATIC) Htu21d_Read_Data(VAR(AUTOSAR_uint16, AUTOMATIC) humiData)
+FUNC(Std_ReturnType, AUTOMATIC) Htu21d_Read_Data(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) humiData)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // do something, send data to humiData
     return ret;
 }
 
-FUNC(Std_ReturnType, AUTOMATIC) Sht31_Read_Data(VAR(AUTOSAR_uint16, AUTOMATIC) humiData)
+FUNC(Std_ReturnType, AUTOMATIC) Sht31_Read_Data(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) humiData)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // do something, send data to humiData
