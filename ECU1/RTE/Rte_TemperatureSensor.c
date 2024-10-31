@@ -3,6 +3,14 @@
 
 VAR(AUTOSAR_uint16, AUTOMATIC) TempSensorData;
 
+
+extern FUNC(Std_ReturnType, RTE_CODE) ReadTemperatureAndSendData(VAR(void, AUTOMATIC));
+
+FUNC(Std_ReturnType, RTE_CODE) Rte_ReadTemperatureAndSendData(VAR(void, AUTOMATIC))
+{
+    ReadTemperatureAndSendData();
+}
+
 extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_TempSensor_ReadData(VAR(TempSensor, AUTOMATIC) id, P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) data);
 
 /******************************************************************************/

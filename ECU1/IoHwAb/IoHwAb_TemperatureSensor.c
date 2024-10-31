@@ -1,26 +1,26 @@
 #include "IoHwAb_TemperatureSensor.h"
 
-FUNC(Std_ReturnType, AUTOMATIC) Hdc1080_Read_Data(VAR(AUTOSAR_uint16, AUTOMATIC) tempData)
+FUNC(Std_ReturnType, AUTOMATIC) Hdc1080_Read_Data(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) tempData)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // do something, send data to tempData
     return ret;
 }
 
-FUNC(Std_ReturnType, AUTOMATIC) Ath10_Read_Data(VAR(AUTOSAR_uint16, AUTOMATIC) tempData)
+FUNC(Std_ReturnType, AUTOMATIC) Ath10_Read_Data(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) tempData)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // do something, send data to tempData
     return ret;
 }
 
-FUNC(Std_ReturnType, AUTOMATIC) Am2320_Read_Data(VAR(AUTOSAR_uint16, AUTOMATIC) tempData)
+FUNC(Std_ReturnType, AUTOMATIC) Am2320_Read_Data(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) tempData)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // do something, send data to tempData
     return ret;
 }
-FUNC(Std_ReturnType, AUTOMATIC) Hdc2010_Read_Data(VAR(AUTOSAR_uint16, AUTOMATIC) tempData)
+FUNC(Std_ReturnType, AUTOMATIC) Hdc2010_Read_Data(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) tempData)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = E_OK;
     // do something, send data to tempData

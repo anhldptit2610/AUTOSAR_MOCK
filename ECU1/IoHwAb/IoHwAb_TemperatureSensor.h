@@ -16,8 +16,6 @@ typedef enum {
     TEMP_SENSOR_ATH10
 } TempSensor;
 
-#define TEMP_SENSOR_ID                  TEMP_SENSOR_HDC1080 
-
 extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_TempSensor_ReadData(VAR(TempSensor, AUTOMATIC) , P2VAR(AUTOSAR_uint16, AUTOMATIC));
 
 #ifdef __cplusplus

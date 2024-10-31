@@ -1,6 +1,12 @@
 #include "OS.h"
 #include "Rte_HumiditySensor.h"
 
+extern FUNC(Std_ReturnType, RTE_CODE) ReadHumidityAndSendData(VAR(void, AUTOMATIC));
+
+FUNC(Std_ReturnType, RTE_CODE) Rte_ReadHumidityAndSendData(VAR(void, AUTOMATIC))
+{
+    ReadHumidityAndSendData();
+}
 
 VAR(AUTOSAR_uint8, AUTOMATIC) HumidSensorData;
 

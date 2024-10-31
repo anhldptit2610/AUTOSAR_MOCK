@@ -8,10 +8,13 @@
 #include "Os_Cfg.h"
 
 /*----------------------------------------------------------------------------*/
-/* task impliment                                                             */
+/* task implement                                                             */
 /*----------------------------------------------------------------------------*/
 
 extern FUNC(void, RTE_CODE) Rte_MirrorHeaterControl(VAR(void, AUTOMATIC));
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_ReadTemperatureAndSendData(VAR(void, AUTOMATIC));
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_ReadHumidityAndSendData(VAR(void, AUTOMATIC));
+
 /******************************************************************************/ 
 /* Name        : Task_Process                                                 */ 
 /* Param       :                                                              */ 
@@ -30,6 +33,8 @@ TASK (OsTask_Process)
 
         if ((ev & Periodic_Event_1s) != (EventMaskType)0)
         {
+            Rte_ReadTemperatureAndSendData();
+            Rte_ReadHumidityAndSendData();
             Rte_MirrorHeaterControl();
         }
     }
