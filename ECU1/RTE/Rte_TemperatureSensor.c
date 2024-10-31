@@ -5,6 +5,15 @@ VAR(AUTOSAR_uint16, AUTOMATIC) TempSensorData;
 
 extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_TempSensor_ReadData(VAR(TempSensor, AUTOMATIC) id, P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) data);
 
+/******************************************************************************/
+/* Name        : Rte_Call_TempSensorIO_GetData                                */
+/* Param       : id - the ID of the temperature sensor                        */
+/*               data - pointer to the variable store the sensor data         */
+/* Return      :                                                              */
+/* Contents    : Call the IO hardware abstraction API to get the temperature  */
+/* Note        :                                                              */
+/******************************************************************************/
+
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TempSensorIO_GetData(VAR(TempSensor, AUTOMATIC) id, P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) data)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = RTE_E_OK;
@@ -12,6 +21,14 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TempSensorIO_GetData(VAR(TempSensor, AUT
     ret = IoHwAb_TempSensor_ReadData(id, data);
     return ret;
 }
+
+/******************************************************************************/
+/* Name        : Rte_Write_PP_TempData_TempData                               */
+/* Param       : data - the data we want to write to the TempData's PPort     */
+/* Return      :                                                              */
+/* Contents    : write the data to the PPort in the TemperatureSensor SWC     */
+/* Note        :                                                              */
+/******************************************************************************/
 
 FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_TempData_TempData(VAR(AUTOSAR_uint16, AUTOMATIC) data)
 {
