@@ -12,15 +12,6 @@ VAR(AUTOSAR_uint8, AUTOMATIC) HumidSensorData;
 
 extern FUNC(Std_ReturnType, AUTOMATIC) IoHwAb_HumiSensor_ReadData(VAR(HumidSensor, AUTOMATIC) id);
 
-/******************************************************************************/
-/* Name        : Rte_Call_HumiSensorIO_GetData                                */
-/* Param       : id - the ID of the temperature sensor                        */
-/*               data - pointer to the variable store the sensor data         */
-/* Return      :                                                              */
-/* Contents    : Call the IO hardware abstraction API to get the humidity     */
-/* Note        :                                                              */
-/******************************************************************************/
-
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HumiSensorIO_GetData(VAR(HumiSensor, AUTOMATIC) id, P2VAR(AUTOSAR_uint8, AUTOMATIC, RTE_APPL_DATA) data)
 {
     VAR(Std_ReturnType, AUTOMATIC) ret = RTE_E_OK;
@@ -28,14 +19,6 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HumiSensorIO_GetData(VAR(HumiSensor, AUT
     ret = IoHwAb_HumiSensor_ReadData(id, data);
     return ret;
 }
-
-/******************************************************************************/
-/* Name        : Rte_Write_PP_HumiData_HumiData                               */
-/* Param       : data - the data we want to write to the TempData's PPort     */
-/* Return      :                                                              */
-/* Contents    : write the data to the PPort in the Humidity SWC              */
-/* Note        :                                                              */
-/******************************************************************************/
 
 FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_HumiData_HumiData(VAR(AUTOSAR_uint16, AUTOMATIC) data)
 {
