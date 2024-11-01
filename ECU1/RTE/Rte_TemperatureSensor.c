@@ -54,7 +54,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_TempData_TempData(VAR(AUTOSAR_uint16
 /* Note        : Port belongs to Temperature Sensor SWCs                      */
 /******************************************************************************/
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSRP_NvM_ReadTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr ){
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSRP_NvM_ReadTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_DstPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
     NvM_ReadBlock(NvMBlock01, (uint16*)NvM_DstPtr)
@@ -69,7 +69,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSRP_NvM_ReadTempSensor( P2VAR(AUTOSAR_u
 /* Note        : Port belongs to Temperature Sensor SWCs                      */
 /******************************************************************************/
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSPP_NvM_WriteTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr ){
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSPP_NvM_WriteTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_SrcPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
     NvM_WriteBlock(NvMBlock01, (uint16*)NvM_SrcPtr)

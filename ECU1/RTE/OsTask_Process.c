@@ -25,6 +25,7 @@ TASK (OsTask_Process)
 {
     VAR(EventMaskType, AUTOMATIC) ev;
 
+    Rte_
     while(1)
     {
         (void) WaitEvent(Periodic_Event_1s);

@@ -10,7 +10,7 @@
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvRP_NvM_ReadTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr ) {
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_ReadBlock(NvMBlock01, (uint16*)NvM_DstPtr)
+    NvM_ReadBlock(NvMBlock01, (uint16*)NvM_DstPtr);
     return ret_val;
 }
 
@@ -24,7 +24,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvRP_NvM_ReadTempSensor( P2VAR(AUTOSAR_u
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvPP_NvM_WriteTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_WriteBlock(NvMBlock01, (uint16*)NvM_SrcPtr)
+    NvM_WriteBlock(NvMBlock01, (uint16*)NvM_SrcPtr);
     return ret_val;
 }
 
@@ -39,7 +39,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvPP_NvM_WriteTempSensor( P2VAR(AUTOSAR_
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvRP_NvM_ReadHumidSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_ReadBlock(NvMBlock02, (uint16*)NvM_DstPtr)
+    NvM_ReadBlock(NvMBlock02, (uint16*)NvM_DstPtr);
     return ret_val;
 }
 
@@ -54,7 +54,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvRP_NvM_ReadHumidSensor( P2VAR(AUTOSAR_
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvRP_NvM_WriteHumidSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_WriteBlock(NvMBlock02, (uint16*)NvM_SrcPtr)
+    NvM_WriteBlock(NvMBlock02, (uint16*)NvM_SrcPtr);
     return ret_val;
 }
 
@@ -69,7 +69,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvRP_NvM_WriteHumidSensor( P2VAR(AUTOSAR
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvRP_NvM_ReadTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_ReadBlock(NvMBlock04, (uint16*)NvM_DstPtr)
+    NvM_ReadBlock(NvMBlock04, (uint16*)NvM_DstPtr);
     return ret_val;
 }
 /******************************************************************************/
@@ -80,9 +80,15 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvRP_NvM_ReadTmpHumidValue( P2VAR(AUTOSA
 /* Note        : Port belongs to NvM SWCs                                     */
 /******************************************************************************/
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvPP_NvM_WriteTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr ){
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvPP_NvM_WriteTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_SrcPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_WriteBlock(NvMBlock04, (uint16*)NvM_SrcPtr)
+    NvM_WriteBlock(NvMBlock04, (uint16*)NvM_SrcPtr);
     return ret_val;
+}
+
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_Get_Config(P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) data)
+{
+    Rte_Call_NvRP_NvM_ReadHumidSensor(data);
+    Rte_Call_NvRP_NvM_ReadTempSensor(data);
 }

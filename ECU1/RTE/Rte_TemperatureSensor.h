@@ -18,9 +18,9 @@ extern FUNC(Std_ReturnType, RTE_CODE) Rte_ReadTemperatureAndSendData(VAR(void, A
 
 /*NvM Code for Temperature Sensor*/
 
-extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSRP_NvM_ReadTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr );
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSRP_NvM_ReadTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_DstPtr );
 
-extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSPP_NvM_WriteTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr );
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_TSPP_NvM_WriteTempSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_SrcPtr );
 
 #ifdef __cplusplus
 }

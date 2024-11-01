@@ -1,4 +1,4 @@
-#include"Rte_MirrorHeaterControl.h"
+#include "Rte_MirrorHeaterControl.h"
 
 extern VAR(AUTOSAR_uint8, AUTOMATIC) TempSensorData;
 extern VAR(AUTOSAR_uint8, AUTOMATIC) HumidSensorData;
@@ -120,4 +120,10 @@ extern FUNC(void, ControlMirrorHeater_CODE) MirrorHeaterControl( VAR(void, AUTOM
 
 FUNC(void, RTE_CODE) Rte_MirrorHeaterControl(VAR(void, AUTOMATIC)){
     MirrorHeaterControl();
+}
+
+extern FUNC(void, ControlMirrorHeater_CODE) InitMirrorHeater( VAR(void, AUTOMATIC) );
+
+FUNC(void, RTE_CODE) Rte_InitMirrorHeater( VAR(void, AUTOMATIC) ) {
+    InitMirrorHeater();
 }

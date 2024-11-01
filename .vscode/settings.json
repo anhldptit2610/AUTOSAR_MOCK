@@ -14,6 +14,7 @@
         "swc_mirrorheatercontrol.h": "c",
         "rte_mirrorheatercontrol.h": "c",
         "swc_heaterelement.h": "c",
-        "rte_mirrorheatercontrol_types.h": "c"
+        "rte_mirrorheatercontrol_types.h": "c",
+        "rte_nvm.h": "c"
     }
 }

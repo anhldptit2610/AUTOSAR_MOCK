@@ -5,7 +5,7 @@
 /* include headers                                                            */
 /*----------------------------------------------------------------------------*/
 #include "Rte_MirrorHeaterControl_Types.h"
-#include "Rte_DataHandle.h"
+#include "Rte_NvM.h"
 
 /*----------------------------------------------------------------------------*/
 /* RTE APIs Prototype Declaration                                             */
@@ -18,14 +18,14 @@ extern FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_MHControl_HeaterControlSignal
 
 extern FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_MHControl_HeaterLevel(VAR(AUTOSAR_uint8, AUTOMATIC) level);
 
-extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCRP_NvM_ReadTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr );
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCRP_NvM_ReadTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_DstPtr );
 
-extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCPP_NvM_WriteTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr );
+extern FUNC(Std_ReturnType, RTE_CODE) Rte_Call_MHCPP_NvM_WriteTmpHumidValue( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_SrcPtr );
 
 /*----------------------------------------------------------------------------*/
 /* Runnables Prototype Declaration                                            */
 /*----------------------------------------------------------------------------*/
-//extern FUNC(void, RTE_CODE) Rte_InitElectricSeatControl( VAR(void, AUTOMATIC) );
+extern FUNC(void, RTE_CODE) Rte_InitMirrorHeater( VAR(void, AUTOMATIC) );
 extern FUNC(void, RTE_CODE) Rte_ControlMirrorHeater(VAR(void, AUTOMATIC));
 
 #endif /* RTE_MIRRORHEATERCONTROL_H */

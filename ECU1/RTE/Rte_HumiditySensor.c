@@ -53,10 +53,10 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_PP_HumiData_HumiData(VAR(AUTOSAR_uint16
 /* Note        : Port belongs to Humidity Sensor SWCs                         */
 /******************************************************************************/
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HMRP_NvM_ReadHumidSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_DstPtr ){
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HMRP_NvM_ReadHumidSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_DstPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_ReadBlock(NvMBlock02, (uint16*)NvM_DstPtr)
+    NvM_ReadBlock(NvMBlock02, (uint16*)NvM_DstPtr);
     return ret_val;
 }
 
@@ -68,10 +68,10 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HMRP_NvM_ReadHumidSensor( P2VAR(AUTOSAR_
 /* Note        : Port belongs to Humidity Sensor SWCs                         */
 /******************************************************************************/
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HMPP_NvM_WriteHumidSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC) NvM_SrcPtr ){
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_HMPP_NvM_WriteHumidSensor( P2VAR(AUTOSAR_uint16, AUTOMATIC, RTE_APPL_DATA) NvM_SrcPtr ){
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
 
-    NvM_WriteBlock(NvMBlock01, (uint16*)NvM_SrcPtr)
+    NvM_WriteBlock(NvMBlock01, (uint16*)NvM_SrcPtr);
     return ret_val;
 }
 	
